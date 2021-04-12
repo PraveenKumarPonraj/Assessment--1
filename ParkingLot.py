@@ -17,10 +17,13 @@ def vehicle_add():
             print('slots occupied:',start,'to',start-vehicle_type+1)
             print('nextslot',start-vehicle_type)
             nextslot=start-vehicle_type
-            print('\nRecord added successfully...')
-            start=nextslot
-            if start<=0:
-                print("Full")
+            if nextslot==0:
+                print("Full,Please go to nextfloor ")
+                vehicle_add()
+            else:    
+                print('\nRecord added successfully...')
+                start=nextslot
+              
              
                    
                   
