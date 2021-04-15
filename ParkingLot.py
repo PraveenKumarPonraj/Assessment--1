@@ -1,15 +1,15 @@
-
 my_list=[]
 vehicle_num=[]
 
 
 def vehicle_add():
-    
-        start=10
-        while(start>=0):
-
+            
+        start=10  
+        end=1
+        if (start>=end):
             print('\t\t',"---VEHICLE CATEGORY---:")
-            print("\n1. Two-wheeler","\n2. Three-wheeler","\n3. Four-wheeler","\n4. Others" )
+            #print("you are in ",i,"floor")
+            print("\n1. Two-wheeler","\n2. Three-wheeler","\n3. Four-","\n4. Others")
             vehicle_type=int(input("Vehicle type:"))
             vehicle_number=input("Enter vehicle Number:")
             vehicle_num.append(vehicle_number)
@@ -17,19 +17,17 @@ def vehicle_add():
             print('slots occupied:',start,'to',start-vehicle_type+1)
             print('nextslot',start-vehicle_type)
             nextslot=start-vehicle_type
+                    
             if nextslot==0:
                 print("Full,Please go to nextfloor ")
-                vehicle_add()
+               
+                main_menu()
+                        
             else:    
                 print('\nRecord added successfully...')
                 start=nextslot
+                      
               
-             
-                   
-                  
-        
-
-
 
 def vehicle_remove():    
     remove=input("Enter the vehicle number:")
@@ -37,9 +35,8 @@ def vehicle_remove():
         print("List is Empty")
     else:
         vehicle_num.remove(remove)
-        print("vehicle Number",remove,"removed from the parking slot successfully")
+        print("vehicle Number",remove,"out from the parking slot successfully")
 
-    
 
 def view_status():
     print('\t\t',"---VEHICLE IN PARKING SLOT---")
@@ -47,7 +44,7 @@ def view_status():
         print("List is Empty")
     else:
         for view in vehicle_num:
-            print("vehicle number:",view )
+            print("vehicle number:",view)
 
 
 def back():
@@ -57,8 +54,8 @@ def back():
 def main_menu():
 
     while True:
-        print( "W E L C O M E  TO   P A R K I N G    S Y S T E M")
-        print("***************************************************")
+        print( "W E L C O M E  TO  P A R K I N G   S Y S T E M")
+        print("*************************************************")
         print("\n1.IN","\n2.OUT","\n3.View Status","\n4.Exit")
         choice=int(input("Enter your choice :"))
         
@@ -71,7 +68,7 @@ def main_menu():
             view_status()
         if choice==4:
             back() 
-
+            break
 
 
 if __name__ == "__main__":
